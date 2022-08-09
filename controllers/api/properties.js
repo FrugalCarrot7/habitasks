@@ -6,6 +6,5 @@ module.exports = {
 
 // A cart is the unpaid order for a user
 async function index(req, res) {
-    properties = Property.find({})
-    console.log('property index works', properties)
+    console.log('property index works')
 }
