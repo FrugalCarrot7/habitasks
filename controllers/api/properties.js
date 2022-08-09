@@ -4,7 +4,7 @@ module.exports = {
   index,
 };
 
-// A cart is the unpaid order for a user
 async function index(req, res) {
-    console.log('property index works')
+    const newProperty = await Property.getAllProperties();
+    res.json(newProperty)
 }

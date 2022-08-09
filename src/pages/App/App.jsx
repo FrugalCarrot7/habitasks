@@ -9,6 +9,7 @@ import RoomPage from "../RoomPage/RoomPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [property, setProperty] = useState(null);
 
   return (
     <main className="App">
@@ -16,7 +17,9 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/property" element={<PropertyPage user = {user} />} />
+            <Route path="/property" element={<PropertyPage user = {user} 
+            property = {property} setProperty = {setProperty} />} />
+
             <Route path="/room" element={<RoomPage user = {user} />} />
           </Routes>
         </>
