@@ -1,5 +1,13 @@
-export default function PropertyListItem() {
+export default function PropertyListItem({house}) {
     return (
-        <div>A Property</div>
+        <>
+            { house ?
+                <div>{house.name}</div>
+            :
+                <p>no homes</p>
+            }
+        </>
+        
+        
     )
 }

@@ -8,8 +8,8 @@ const propertySchema = new Schema({
     timestamps: true
 });
 
-propertySchema.statics.getAllProperties = function() {
-  return this.find({});
-};
+// propertySchema.statics.getAllProperties = function() {
+//   return this.find({});
+// };
 
 module.exports = mongoose.model('Property', propertySchema);
