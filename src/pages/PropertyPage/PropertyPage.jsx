@@ -16,6 +16,7 @@ export default function PropertyPage({user, property}) {
             :
                 <>
                     <h1>{user.name}'s got no property</h1>
+                    <NewPropertyForm />
                 </>
             }
         </div>

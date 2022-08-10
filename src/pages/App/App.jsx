@@ -27,7 +27,7 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="/property" element={<PropertyPage user = {user} property = {property}/>} />
+            <Route path="/" element={<PropertyPage user = {user} property = {property}/>} />
             <Route path="/room" element={<RoomPage user = {user} />} />
           </Routes>
         </>

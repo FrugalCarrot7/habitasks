@@ -4,3 +4,7 @@ const BASE_URL = '/api/properties'
 export function getAllProperties() {
     return sendRequest(`${BASE_URL}/index`);
 }
+
+export function addAProperty (propertyForm) {
+    return sendRequest(`${BASE_URL}/create`, 'POST', propertyForm);
+}
