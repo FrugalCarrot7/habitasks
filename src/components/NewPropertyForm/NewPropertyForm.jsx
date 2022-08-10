@@ -11,6 +11,9 @@ export default function NewPropertyForm() {
         evt.preventDefault()
         const newProperty = await propertiesAPI.addAProperty(propertyForm)
         console.log(newProperty)
+        setPropertyForm({
+            name: ''
+        })
     }
 
     function handleChange(evt) {
