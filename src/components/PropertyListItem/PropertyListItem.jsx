@@ -10,7 +10,10 @@ export default function PropertyListItem({house}) {
             { house ?
                 <div>
                     <p>{house.name}</p>
-                    <button onClick={handleDelete}>End Me</button>
+                    <form onSubmit={handleDelete}>
+                        <button type='submit'>End Me</button>
+                    </form>
+                    
                 </div>
             :
                 <p>no homes</p>
