@@ -28,6 +28,13 @@ export default function App() {
     setProperty([...property, newProperty])
   }
 
+  async function updateProperty(houseId, updateProperty) {
+    const updatedProperty = await propertiesAPI.updateAProperty(houseId, updateProperty)
+    const checkHouse = property.findIndex(house => house._id === houseId)
+    console.log(checkHouse)
+    setProperty()
+  }
+
   return (
     <main className="App">
       {user ? (
@@ -35,7 +42,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<PropertyPage user = {user}
-             property = {property} addProperty={addProperty}/>} />
+             property = {property} addProperty={addProperty} updateProperty={updateProperty}/>} />
             <Route path="/room" element={<RoomPage user = {user} />} />
           </Routes>
         </>

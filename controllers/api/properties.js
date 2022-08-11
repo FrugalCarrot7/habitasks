@@ -4,6 +4,7 @@ module.exports = {
   index,
   create,
   delete: deleteProperty,
+  update,
 };
 
 async function index(req, res) {
@@ -26,8 +27,14 @@ async function create(req, res) {
 
 async function deleteProperty(req, res) {
   console.log(req.params.id)
-  const delProperty = await Property.findByIdAndRemove(req.params.id)
+  const delProperty = await Property.findByIdAndRemove(req.params.id);
   console.log('i want to delete you')
 
   return res.json(delProperty)
+}
+
+async function update(req, res) {
+  console.log('works')
+  const updProperty = await Property.findByIdAndUpdate(req.params.id, req.body);
+  return res.json(updProperty)
 }

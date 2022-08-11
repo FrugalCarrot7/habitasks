@@ -1,6 +1,7 @@
 import * as propertiesAPI from '../../utilities/properties-api'
+import UpdatePropertyForm from '../UpdatePropertyForm/UpdatePropertyForm'
 
-export default function PropertyListItem({house}) {
+export default function PropertyListItem({house, updateProperty}) {
 
     async function handleDelete(evt) {
         evt.preventDefault()
@@ -15,6 +16,7 @@ export default function PropertyListItem({house}) {
                     <form onSubmit={handleDelete}>
                         <button type='submit'>End Me</button>
                     </form>
+                    <UpdatePropertyForm house={house} updateProperty={updateProperty}/>
                     
                 </div>
             :

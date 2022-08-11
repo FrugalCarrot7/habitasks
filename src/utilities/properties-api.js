@@ -10,6 +10,9 @@ export function addAProperty (propertyForm) {
 }
 
 export function deleteProperty (house) {
-    console.log()
     return sendRequest(`${BASE_URL}/delete/${house}`, 'DELETE');
+}
+
+export function updateAProperty (house, updatePropertyData) {
+    return sendRequest(`${BASE_URL}/${house}`, 'PUT', updatePropertyData)
 }
