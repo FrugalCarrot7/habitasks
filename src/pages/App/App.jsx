@@ -12,14 +12,17 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [property, setProperty] = useState(null);
 
+  async function getProperty() {
+    let residences = await propertiesAPI.getAllProperties()
+    console.log(residences)
+    setProperty(residences)
+  }
+
   useEffect(function() {
-    async function getProperty() {
-        let residences = await propertiesAPI.getAllProperties()
-        console.log(residences)
-        setProperty(residences)
+    if (user) {
+      getProperty()
     }
-    getProperty()
-  }, [])
+  }, [user])
 
   return (
     <main className="App">

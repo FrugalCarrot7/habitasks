@@ -7,7 +7,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const property = await Property.find({user : req.user.id})
+    const property = await Property.find({user : req.user._id})
     // const property = await Property.getAllProperties();
     res.json(property)
 }
