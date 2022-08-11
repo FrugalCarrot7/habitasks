@@ -21,6 +21,9 @@ async function create(req, res) {
 }
 
 async function deleteProperty(req, res) {
+  console.log(req.params.id)
+  const delProperty = await Property.findByIdAndRemove(req.params.id)
   console.log('i want to delete you')
-  return res.json()
+
+  return res.json(delProperty)
 }

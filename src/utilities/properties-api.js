@@ -9,6 +9,7 @@ export function addAProperty (propertyForm) {
     return sendRequest(`${BASE_URL}/create`, 'POST', propertyForm);
 }
 
-export function deleteProperty (house) {
-    return sendRequest(`${BASE_URL}/delete`, 'DELETE', house);
+export function deleteProperty (id) {
+    console.log()
+    return sendRequest(`${BASE_URL}/delete/${id}`, 'DELETE');
 }

@@ -2,7 +2,9 @@ import * as propertiesAPI from '../../utilities/properties-api'
 
 export default function PropertyListItem({house}) {
 
-    async function handleDelete() {
+    async function handleDelete(evt) {
+        evt.preventDefault()
+        console.log(house._id)
         await propertiesAPI.deleteProperty(house._id)
     }
     return (
@@ -19,7 +21,6 @@ export default function PropertyListItem({house}) {
                 <p>no homes</p>
             }
         </>
-        
-        
+          
     )
 }
