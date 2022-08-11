@@ -1,7 +1,7 @@
 import NewPropertyForm from "../../components/NewPropertyForm/NewPropertyForm"
 import PropertyList from "../../components/PropertyList/PropertyList"
 
-export default function PropertyPage({user, property}) {
+export default function PropertyPage({user, property, addProperty}) {
     console.log(`property log: ${property}`)
     return (
         <div>
@@ -12,7 +12,7 @@ export default function PropertyPage({user, property}) {
                     <PropertyList property={property} />
                     <hr />
                     <h2>Create A Property</h2>
-                    <NewPropertyForm />
+                    <NewPropertyForm addProperty={addProperty}/>
                 </>
             :
                 <>

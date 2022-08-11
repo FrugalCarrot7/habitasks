@@ -7,9 +7,13 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const property = await Property.find({user : req.user._id})
+  console.log(`this is user index ${req.user}`)
+  let property = null
+  if(req.user._id){
+    property = await Property.find({user : req.user._id})
+  }
     // const property = await Property.getAllProperties();
-    res.json(property)
+  res.json(property)
 }
 
 async function create(req, res) {

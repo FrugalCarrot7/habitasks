@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import * as propertiesAPI from '../../utilities/properties-api'
 
-export default function NewPropertyForm() {
+export default function NewPropertyForm({addProperty}) {
     const [propertyForm, setPropertyForm] = useState({
         name: ''
     })
@@ -9,8 +9,8 @@ export default function NewPropertyForm() {
 
     async function handleSubmit(evt) {
         evt.preventDefault()
-        const newProperty = await propertiesAPI.addAProperty(propertyForm)
-        console.log(newProperty)
+        addProperty(propertyForm)
+        console.log(propertyForm)
         setPropertyForm({
             name: ''
         })

@@ -12,17 +12,21 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [property, setProperty] = useState(null);
 
-  async function getProperty() {
-    let residences = await propertiesAPI.getAllProperties()
-    console.log(residences)
-    setProperty(residences)
-  }
+  
 
   useEffect(function() {
-    if (user) {
-      getProperty()
+    async function getProperty() {
+      let residences = await propertiesAPI.getAllProperties()
+      console.log(residences)
+      setProperty(residences)
     }
-  }, [user])
+    getProperty()
+  }, [])
+
+  function addProperty(newProperty) {
+    propertiesAPI.addAProperty(newProperty)
+    setProperty([...property, newProperty])
+  }
 
   return (
     <main className="App">
@@ -31,7 +35,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<PropertyPage user = {user}
-             property = {property} />} />
+             property = {property} addProperty={addProperty}/>} />
             <Route path="/room" element={<RoomPage user = {user} />} />
           </Routes>
         </>
