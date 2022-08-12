@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
@@ -11,28 +11,34 @@ import * as propertiesAPI from '../../utilities/properties-api'
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [property, setProperty] = useState(null);
+  const [switchy, setSwitchy] = useState(true);
 
-  
+  const navigate = useNavigate()
 
   useEffect(function() {
     async function getProperty() {
       let residences = await propertiesAPI.getAllProperties()
-      console.log(residences)
+      console.log(`useEffect ${residences}`)
       setProperty(residences)
     }
     getProperty()
-  }, [])
+  }, [switchy])
 
   function addProperty(newProperty) {
     propertiesAPI.addAProperty(newProperty)
     setProperty([...property, newProperty])
   }
+  
 
   async function updateProperty(houseId, updateProperty) {
     const updatedProperty = await propertiesAPI.updateAProperty(houseId, updateProperty)
-    const checkHouse = property.findIndex(house => house._id === houseId)
-    console.log(checkHouse)
-    setProperty()
+    const newUpdatedProperty = {...updatedProperty}
+    const foundHouse = property.findIndex(house => house._id === houseId)
+    const newProperties = [...property]
+    newProperties[foundHouse] = newUpdatedProperty
+    console.log(`this is newProperties ${newProperties}`)
+    setProperty(newProperties)
+    setSwitchy(!switchy)
   }
 
   return (
