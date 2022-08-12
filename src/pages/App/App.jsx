@@ -21,13 +21,26 @@ export default function App() {
       console.log(`useEffect ${residences}`)
       setProperty(residences)
     }
-    getProperty()
-  }, [switchy])
+    console.log(`this is user before get property ${user}`)
+    if (user){
+      getProperty()
+    } else {
+      console.log('i was told to do this but i aint doin shit')
+    }
+    
+  }, [switchy, user])
 
-  function addProperty(newProperty) {
-    propertiesAPI.addAProperty(newProperty)
-    setProperty([...property, newProperty])
+  async function addProperty(newProperty) {
+    const newestProp = await propertiesAPI.addAProperty(newProperty)
+    setProperty([...property, newestProp])
   }
+
+  async function deleteProperty(delProperty) {
+    await propertiesAPI.deleteProperty(delProperty)
+    const propertyCopy = [...property]
+    const newProperties = propertyCopy.filter(p => p._id === delProperty._id)
+    setProperty(newProperties)
+} 
   
 
   async function updateProperty(houseId, updateProperty) {
@@ -48,7 +61,8 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<PropertyPage user = {user}
-             property = {property} addProperty={addProperty} updateProperty={updateProperty}/>} />
+             property = {property} addProperty={addProperty} updateProperty={updateProperty}
+             deleteProperty={deleteProperty}/>} />
             <Route path="/room" element={<RoomPage user = {user} />} />
           </Routes>
         </>

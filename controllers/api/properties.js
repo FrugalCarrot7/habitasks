@@ -8,10 +8,12 @@ module.exports = {
 };
 
 async function index(req, res) {
-  console.log(`this is user index ${req.user}`)
+  stupidReact = req.user.id
+  console.log(`this is user index ${stupidReact}`)
   let property = null
   if(req.user){
     property = await Property.find({user : req.user._id})
+    console.log('there is req.user in index')
   }
     // const property = await Property.getAllProperties();
   res.json(property)
