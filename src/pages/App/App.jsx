@@ -6,6 +6,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import PropertyPage from "../PropertyPage/PropertyPage";
 import RoomPage from "../RoomPage/RoomPage";
+import TaskPage from "../TaskPage/TaskPage";
 import * as propertiesAPI from '../../utilities/properties-api'
 
 
@@ -65,6 +66,7 @@ export default function App() {
              deleteProperty={deleteProperty}/>} />
              <Route path='/:selectedProperty' element={<RoomPage 
              useState={ useState }/>}/>
+             <Route path='/:selectedProperty/tasks/:selectedRoom' element={ <TaskPage useState= { useState } />} />
             
           </Routes>
         </>
