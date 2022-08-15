@@ -3,6 +3,7 @@ import * as propertiesAPI from '../../utilities/properties-api'
 import * as roomsAPI from '../../utilities/rooms-api'
 import {useEffect} from 'react'
 import NewRoomForm from '../../components/NewRoomForm/NewRoomForm'
+import RoomList from '../../components/RoomList/RoomList'
 
 export default function RoomPage( {useState}) {
     const [rooms, setRooms] = useState([])
@@ -20,13 +21,16 @@ export default function RoomPage( {useState}) {
       async function addRoom(newRoom, newForm) {
         const newestRoom = await roomsAPI.addARoom(newRoom, newForm)
         console.log(newestRoom)
-        setRooms([newestRoom.room])
+        const arraylength = rooms.length
+        const lastRoom = newestRoom.room[arraylength]
+        console.log(lastRoom)
+        setRooms([...rooms, lastRoom])
       }
 
     return (
         <main>
             <h1>Rooms</h1>{selectedProperty}
-    
+            <RoomList rooms={rooms}/>
             <NewRoomForm addRoom={addRoom} selectedProperty={selectedProperty}/>
         </main>
     )
