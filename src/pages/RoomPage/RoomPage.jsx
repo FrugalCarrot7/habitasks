@@ -8,7 +8,6 @@ import RoomList from '../../components/RoomList/RoomList'
 export default function RoomPage( {useState}) {
     const [rooms, setRooms] = useState([])
     let {selectedProperty} = useParams()
-    console.log(rooms)
 
     useEffect(function() {
         async function getRooms(selectedProperty) {
@@ -20,10 +19,8 @@ export default function RoomPage( {useState}) {
 
       async function addRoom(newRoom, newForm) {
         const newestRoom = await roomsAPI.addARoom(newRoom, newForm)
-        console.log(newestRoom)
         const arraylength = rooms.length
         const lastRoom = newestRoom.room[arraylength]
-        console.log(lastRoom)
         setRooms([...rooms, lastRoom])
       }
 

@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
@@ -19,14 +19,13 @@ export default function App() {
   useEffect(function() {
     async function getProperty() {
       let residences = await propertiesAPI.getAllProperties()
-      console.log(`useEffect ${residences}`)
       setProperty(residences)
     }
-    console.log(`this is user before get property ${user}`)
+
     if (user){
       getProperty()
     } else {
-      console.log('i was told to do this but i aint doin shit')
+
     }
     
   }, [switchy, user])
@@ -50,7 +49,6 @@ export default function App() {
     const foundHouse = property.findIndex(house => house._id === houseId)
     const newProperties = [...property]
     newProperties[foundHouse] = newUpdatedProperty
-    console.log(`this is newProperties ${newProperties}`)
     setProperty(newProperties)
     setSwitchy(!switchy)
   }

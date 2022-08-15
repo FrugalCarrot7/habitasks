@@ -2,7 +2,6 @@ import NewPropertyForm from "../../components/NewPropertyForm/NewPropertyForm"
 import PropertyList from "../../components/PropertyList/PropertyList"
 
 export default function PropertyPage({user, property, addProperty, updateProperty, deleteProperty}) {
-    console.log(`property log: ${property}`)
     return (
         <div>
             { property && property.length > 0 ?

@@ -6,8 +6,15 @@ import {useEffect} from 'react'
 
 export default function TaskPage( {useState}) {
     const [tasks, setTasks] = useState([])
-    let {selectedRoom} = useParams()
+    const {selectedProperty} = useParams()
+    const {selectedRoom} = useParams()
 
+    useEffect(function() {
+        async function getTasks() {
+          
+        }
+        getTasks()
+      }, [])
 
 
     return (

@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import * as propertiesAPI from '../../utilities/properties-api'
+
 
 export default function NewRoomForm({addRoom, selectedProperty} ) {
-    console.log('above')
-    console.log(selectedProperty)
     const [roomForm, setRoomForm] = useState({
         name: '',
         size: ''
@@ -13,7 +11,6 @@ export default function NewRoomForm({addRoom, selectedProperty} ) {
     async function handleSubmit(evt) {
         evt.preventDefault()
         addRoom(selectedProperty, roomForm)
-        console.log(roomForm)
         
         setRoomForm({
             name: '',
