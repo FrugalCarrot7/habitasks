@@ -7,7 +7,8 @@ export default function PropertyList({property, updateProperty, deleteProperty})
         
           <ul>
             {property.map((house, idx) => (
-              <PropertyListItem house = {house} key = {idx} updateProperty={updateProperty} deleteProperty={deleteProperty}/>
+              <PropertyListItem house = {house} key = {idx} 
+              updateProperty={updateProperty} deleteProperty={deleteProperty}/>
             ))}
           </ul>
        

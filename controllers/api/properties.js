@@ -5,6 +5,7 @@ module.exports = {
   create,
   delete: deleteProperty,
   update,
+  show,
 };
 
 async function index(req, res) {
@@ -36,7 +37,16 @@ async function deleteProperty(req, res) {
 }
 
 async function update(req, res) {
-  console.log('works')
   const updProperty = await Property.findByIdAndUpdate(req.params.id, req.body);
   return res.json(updProperty)
+}
+
+async function show(req, res) {
+  console.log('hit show function properties')
+  console.log(req.params.id)
+  const oneProperty = await Property.findById(req.params.selectedProperty)
+  console.log(`this is oneProperty.room ${oneProperty.room}`)
+
+  return res.json(oneProperty)
+
 }

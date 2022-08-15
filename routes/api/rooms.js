@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const roomsCtrl = require('../../controllers/api/rooms')
 
-router.post('/create', roomsCtrl.create);
+router.post('/property/:selectedProperty/rooms', roomsCtrl.create);
 
 
 

@@ -16,3 +16,7 @@ export function deleteProperty (house) {
 export function updateAProperty (house, updatePropertyData) {
     return sendRequest(`${BASE_URL}/${house}`, 'PUT', updatePropertyData)
 }
+
+export function getOneProperty (selectedProperty) {
+    return sendRequest(`${BASE_URL}/${selectedProperty}`)
+}

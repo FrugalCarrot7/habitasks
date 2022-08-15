@@ -7,7 +7,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import PropertyPage from "../PropertyPage/PropertyPage";
 import RoomPage from "../RoomPage/RoomPage";
 import * as propertiesAPI from '../../utilities/properties-api'
-import * as roomsAPI from '../../utilities/rooms-api'
+
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -63,7 +63,8 @@ export default function App() {
             <Route path="/" element={<PropertyPage user = {user}
              property = {property} addProperty={addProperty} updateProperty={updateProperty}
              deleteProperty={deleteProperty}/>} />
-             <Route path='/:selectedProperty' element={<RoomPage useState={ useState }/>}/>
+             <Route path='/:selectedProperty' element={<RoomPage 
+             useState={ useState }/>}/>
             
           </Routes>
         </>

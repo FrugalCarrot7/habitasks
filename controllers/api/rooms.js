@@ -6,9 +6,17 @@ create,
 };
 
 async function create(req, res){
-    roomsProperty = Property.findById(req.params.id)
-        req.body.user = req.user._id
+    console.log(`create selectedProp: ${req.params.selectedProperty}`)
+    const roomsProperty = await Property.findById(req.params.selectedProperty)
+    console.log(req.body)
+    if (roomsProperty && roomsProperty.user.equals(req.user._id)) {
         console.log(roomsProperty)
-        console.log(req.body)
+        roomsProperty.room.push(req.body)
+        await roomsProperty.save()
+        res.json(roomsProperty)
+    } else {
+        console.log('no property found')
+    }
+    
     
 }
