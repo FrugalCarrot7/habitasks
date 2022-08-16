@@ -22,6 +22,7 @@ app.use(require('./config/checkToken'))
 app.use('/api/users', require('./routes/api/users'))
 app.use('/api/properties', require('./routes/api/properties'))
 app.use('/api/rooms', require('./routes/api/rooms'))
+app.use('/api/tasks', require('./routes/api/tasks'))
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX requests
