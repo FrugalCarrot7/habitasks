@@ -35,7 +35,7 @@ export default function NewTaskForm( {addTask, selectedProperty, selectedRoom} )
             <label>Task:</label>
             <input type='text' name='task' value={taskForm.task} onChange={handleChange}></input>
             <label>Due:</label>
-            <input type='date' name='due' value={taskForm.due} onChange={handleChange}></input>
+            <input type='date' name='due' value={taskForm.due} onChange={handleChange} required={'required'}></input>
             <button type="submit">Submit</button>
         </form>
     );
