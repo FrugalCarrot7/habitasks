@@ -7,7 +7,7 @@ export default function PropertyPage({user, property, addProperty, updatePropert
             { property && property.length > 0 ?
 
                 <>
-                    <h1>{user.name}'s Properties</h1>
+                    <h1>Welcome {user.name}</h1>
                     <PropertyList property={property} updateProperty={updateProperty} deleteProperty={deleteProperty}/>
                     <hr />
                     <h2>Create A Property</h2>
