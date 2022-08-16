@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
+import './LoginForm.css';
+import { Form, FormControl, FormLabel, Button } from "react-bootstrap";
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
@@ -14,12 +16,8 @@ export default function LoginForm({ setUser }) {
   }
 
   async function handleSubmit(evt) {
-    // Prevent form from being submitted to the server
     evt.preventDefault();
     try {
-      // The promise returned by the signUp service method 
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {
@@ -29,14 +27,16 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
+      <br/>
       <div className="form-container">
-        <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
+        <Form autoComplete="off" onSubmit={handleSubmit}>
+          <FormLabel>Email</FormLabel>
+          <FormControl type="text" name="email" value={credentials.email} onChange={handleChange} required />
+          <FormLabel>Password</FormLabel>
+          <FormControl type="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <br />
+          <Button type="submit">LOG IN</Button>
+        </Form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
     </div>
