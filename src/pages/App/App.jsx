@@ -36,9 +36,10 @@ export default function App() {
   }
 
   async function deleteProperty(delProperty) {
-    await propertiesAPI.deleteProperty(delProperty)
-    const propertyCopy = [...property]
-    const newProperties = propertyCopy.filter(p => p._id === delProperty._id)
+    const newProperties = await propertiesAPI.deleteProperty(delProperty)
+    // const propertyCopy = [...property]
+    console.log(newProperties)
+    // const newProperties = propertyCopy.filter(p => p._id === delProperty._id)
     setProperty(newProperties)
 } 
   
