@@ -1,6 +1,5 @@
 import {useParams} from 'react-router-dom'
 import * as tasksAPI from '../../utilities/tasks-api'
-
 import {useEffect} from 'react'
 import NewTaskForm from '../../components/NewTaskForm/NewTaskForm'
 import TaskList from '../../components/TaskList/TaskList'
