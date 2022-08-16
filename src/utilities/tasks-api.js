@@ -6,5 +6,5 @@ export function addATask (selectedProperty, selectedRoom, taskForm) {
 }
 
 export function getOneRoom (selectedProperty, selectedRoom) {
-    return sendRequest(`${BASE_URL}/property/${selectedProperty}/room/${selectedRoom}`)
+    return sendRequest(`${BASE_URL}/${selectedProperty}/${selectedRoom}/index`)
 }

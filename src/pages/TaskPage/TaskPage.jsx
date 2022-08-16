@@ -3,6 +3,7 @@ import * as tasksAPI from '../../utilities/tasks-api'
 
 import {useEffect} from 'react'
 import NewTaskForm from '../../components/NewTaskForm/NewTaskForm'
+import TaskList from '../../components/TaskList/TaskList'
 
 
 export default function TaskPage( {useState}) {
@@ -13,24 +14,26 @@ export default function TaskPage( {useState}) {
     useEffect(function() {
         async function getTasks(selectedProperty, selectedRoom) {
           const roomTasks = await tasksAPI.getOneRoom(selectedProperty, selectedRoom)
-          setTasks([])
+          console.log(roomTasks)
+          setTasks(roomTasks)
         }
-        getTasks()
+        getTasks(selectedProperty, selectedRoom)
       }, [])
     
 
     async function addTask(newTaskProperty, NewTaskRoom, newTaskForm) {
-        const newestTask = await tasksAPI.addATask(
+        const newestTasks = await tasksAPI.addATask(
             newTaskProperty, NewTaskRoom, newTaskForm
             )
-        console.log(newestTask)
+        console.log(newestTasks)
         
-        setTasks([...tasks])
+        setTasks([...newestTasks])
     }
 
     return (
         <main>
             <h1>Tasks</h1>{selectedRoom}
+            <TaskList tasks={tasks}/>
             <NewTaskForm addTask={addTask} 
             selectedProperty={selectedProperty} selectedRoom={selectedRoom} />
         </main>

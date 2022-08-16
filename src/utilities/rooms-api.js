@@ -2,7 +2,6 @@ import sendRequest from './send-request';
 const BASE_URL = '/api/rooms'
 
 export function addARoom (selectedProperty, roomForm) {
-    console.log(roomForm)
     return sendRequest(`${BASE_URL}/property/${selectedProperty}/rooms`, 'POST', roomForm);
 }
 

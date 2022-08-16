@@ -4,7 +4,7 @@ import * as tasksAPI from '../../utilities/tasks-api'
 
 export default function NewTaskForm( {addTask, selectedProperty, selectedRoom} ) {
     const [taskForm, setTaskForm] = useState({
-        name: '',
+        task: '',
         due: ''
     })
 
@@ -15,7 +15,7 @@ export default function NewTaskForm( {addTask, selectedProperty, selectedRoom} )
         addTask(selectedProperty, selectedRoom, taskForm)
         
         setTaskForm({
-            name: '',
+            task: '',
             due: ''
         })
 
