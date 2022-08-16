@@ -29,12 +29,16 @@ export default function NewRoomForm({addRoom, selectedProperty} ) {
     
   
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Room Name:</label>
-            <input type='text' name='name' value={roomForm.name} onChange={handleChange}></input>
-            <label>Room Size:</label>
-            <input type='number' name='size' value={roomForm.size} onChange={handleChange}></input>
-            <button type="submit">Submit</button>
-        </form>
+        <>
+            <h3>CREATE A ROOM</h3>
+            <form onSubmit={handleSubmit}>
+                <label>Room Name:</label>
+                <input type='text' name='name' value={roomForm.name} onChange={handleChange}></input>
+                <label>Room Size:</label>
+                <input type='number' name='size' value={roomForm.size} onChange={handleChange}></input>
+                <button type="submit">Submit</button>
+            </form>
+        </>
+        
     );
   }

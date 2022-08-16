@@ -4,10 +4,10 @@ export default function TaskListItem({task}) {
     return (
         <>
             { task ?
-                <div>
-                    <p>{task.task} is due on {task.due}</p>
-                       
-                </div>
+                <tr>
+                    <td><p>{task.task}</p></td>
+                    <td><p>{task.due}</p></td>
+                </tr>
             :
                 <p>no task</p>
             }

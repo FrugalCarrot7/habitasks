@@ -30,7 +30,7 @@ export default function UpdatePropertyForm({house, updateProperty}) {
         <form onSubmit={handleSubmit}>
             <label>Property Name:</label>
             <input type='text' name='name' value={updatePropertyForm.name} onChange={handleChange}></input>
-            <button type="submit">Submit</button>
+            <button type="submit">UPDATE</button>
         </form>
     );
   }

@@ -4,10 +4,10 @@ export default function RoomListItem({room}) {
     return (
         <>
             { room ?
-                <div>
-                    <p>{room.name} is {room.size} units big</p>
-                    <Link to={`tasks/${room._id}`}>Tasks</Link>   
-                </div>
+                <tr>
+                    <td><p>{room.name} is {room.size} units big</p></td>
+                    <td><Link to={`tasks/${room._id}`}>Tasks</Link></td>   
+                </tr>
             :
                 <p>no room</p>
             }

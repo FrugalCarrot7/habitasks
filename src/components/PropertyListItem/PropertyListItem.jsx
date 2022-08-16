@@ -1,21 +1,20 @@
 import { Link } from 'react-router-dom'
-import * as propertiesAPI from '../../utilities/properties-api'
+
 import UpdatePropertyForm from '../UpdatePropertyForm/UpdatePropertyForm'
 
 export default function PropertyListItem({house, updateProperty, deleteProperty}) {
     return (
         <>
             { house ?
-                <div>
-                    <p>{house.name}</p>
+                <tr>
+                    <td><p>{house.name}</p></td>
                     
-                    <Link to={`/${house._id}`}>Check Out These Rooms!</Link>
+                    <td><Link to={`/${house._id}`}>ROOMS</Link></td>
+
+                    <td><UpdatePropertyForm house={house} updateProperty={updateProperty}/></td>
                 
-                    <button onClick={() => deleteProperty(house._id)}>End Me</button>
-                   
-                    <UpdatePropertyForm house={house} updateProperty={updateProperty}/>
-                    
-                </div>
+                    <td><button onClick={() => deleteProperty(house._id)}>DELETE</button></td>
+                </tr>
             :
                 <p>no homes</p>
             }
