@@ -16,6 +16,7 @@ export default function PropertyPage({user, property, addProperty, updatePropert
             :
                 <>
                     <h1>{user.name}'s got no property</h1>
+                    <sub>Please Create A Property</sub>
                     <NewPropertyForm addProperty={addProperty}/>
                 </>
             }

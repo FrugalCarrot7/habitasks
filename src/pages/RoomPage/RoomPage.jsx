@@ -26,7 +26,7 @@ export default function RoomPage( {useState}) {
 
     return (
         <main>
-            <h1>Rooms</h1>{selectedProperty}
+            <h1>Rooms</h1>
             <RoomList rooms={rooms}/>
             <NewRoomForm addRoom={addRoom} selectedProperty={selectedProperty}/>
         </main>

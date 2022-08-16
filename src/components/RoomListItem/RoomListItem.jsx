@@ -5,7 +5,7 @@ export default function RoomListItem({room}) {
         <>
             { room ?
                 <tr>
-                    <td><p>{room.name} is {room.size} units big</p></td>
+                    <td><p>{room.name} is {room.size} square feet</p></td>
                     <td><Link to={`tasks/${room._id}`}>Tasks</Link></td>   
                 </tr>
             :

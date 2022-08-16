@@ -31,7 +31,7 @@ export default function TaskPage( {useState}) {
 
     return (
         <main>
-            <h1>Tasks</h1>{selectedRoom}
+            <h1>Tasks</h1>
             <TaskList tasks={tasks}/>
             <NewTaskForm addTask={addTask} 
             selectedProperty={selectedProperty} selectedRoom={selectedRoom} />
