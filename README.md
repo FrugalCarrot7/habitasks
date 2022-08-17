@@ -6,6 +6,18 @@ Keep track of tasks related to your habitat! Create
 
 
 ### LINK:
+
+https://habitasks.herokuapp.com/
+
+### Property
+![PropPage](https://imgur.com/yDRdmyj.png)
+
+### Room
+![Room](https://imgur.com/SHVyoBL.png)
+
+### Task
+![Task](https://imgur.com/wk13beC.png)
+
 <hr>
 
 ### Getting Started:
@@ -20,6 +32,8 @@ Keep track of tasks related to your habitat! Create
 ### FLOW
 ![WIREFRAME](https://imgur.com/ApXMlnf.png)
 
+![TRELLO](https://imgur.com/Hn4wjaJ.png)
+<hr>
 ## USED TECHNOLOGIES:
 - MongoDB/Mongoose
 - Express
@@ -28,6 +42,8 @@ Keep track of tasks related to your habitat! Create
 - Bootstap
 <hr>
 
+## UNSOLVED PROBLEMS:
+- N/A
 
 ## FUTURE ENHANCEMENTS: 
 - Add items and dimensions to a room to be maintained
