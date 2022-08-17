@@ -4,7 +4,7 @@
 Keep track of tasks related to your habitat! Create
 <hr>
 
-
+## Getting Started:
 ### LINK:
 
 https://habitasks.herokuapp.com/
@@ -20,7 +20,7 @@ https://habitasks.herokuapp.com/
 
 <hr>
 
-### Getting Started:
+
 <hr>
 
 ### WIREFRAME
