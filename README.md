@@ -1,7 +1,8 @@
 # HABITASKS
 
 ### Introduction: 
-Keep track of tasks related to your habitat! Create
+Keep track of tasks related to your habitat! Manage your Property and everything in it so you'll never miss a maintenance window ever again.
+
 <hr>
 
 ## Getting Started:
