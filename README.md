@@ -39,7 +39,7 @@ https://habitasks.herokuapp.com/
 - Express
 - React
 - Node
-- Bootstap
+- Bootstrap
 <hr>
 
 ## UNSOLVED PROBLEMS:
